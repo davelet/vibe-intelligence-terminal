@@ -7,7 +7,7 @@
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "tauri-terminal",
+    "productName": "VibeTerm",
     "version": "0.0.0"
   },
   "tauri": {
@@ -40,7 +40,7 @@
       {
         "fullscreen": false,
         "resizable": true,
-        "title": "tauri-terminal",
+        "title": "VibeTerm 歪脖他妈",
         "width": 800,
         "height": 600
       }
