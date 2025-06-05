@@ -2,17 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/src/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri App</title>
+    <title>VibeTerm 终端</title>
     <script type="module" src="/src/main.ts" defer></script>
     <style>
-      .logo.vite:hover {
-        filter: drop-shadow(0 0 2em #747bff);
+      body {
+        margin: 0;
+        background: rgb(47, 47, 47);
       }
 
-      .logo.typescript:hover {
-        filter: drop-shadow(0 0 2em #2d79c7);
+      #terminal {
+        height: 100vh;
+        position: relative;
+      }
+
+      /* Context menu styles */
+      .context-menu {
+        position: fixed;
+        background: #2f2f2f;
+        border: 1px solid #444;
+        border-radius: 4px;
+        padding: 8px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: none;
+        font-family: 'Jetbrains Mono', 'MesloLGS NF', monospace;
+        font-size: 14px;
+        min-width: 220px;
+      }
+
+      .context-menu-item {
+        padding: 8px 16px;
+        cursor: pointer;
+        color: #f0f0f0;
+      }
+
+      .context-menu-item:hover {
+        background: #3a3a3a;
       }
     </style>
   </head>
