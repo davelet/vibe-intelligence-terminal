@@ -37,11 +37,21 @@ function writeToPty(data: string) {
     data,
   });
 }
-function initShell() {
-  invoke("async_create_shell").catch((error) => {
-    // on linux it seem to to "Operation not permitted (os error 1)" but it still works because echo $SHELL give /bin/bash
-    console.error("Error creating shell:", error);
-  });
+async function initShell() {
+  // Show initialization message
+  term.writeln("Initializing terminal...");
+  
+  try {
+    await invoke("async_create_shell");
+    
+    // Clear the screen after 3 seconds
+    // setTimeout(() => {
+    //   term.writeln("\x1B[2J\x1B[H");
+    //   term.writeln(`You are using ${shellName}\r`);
+    // }, 3000);
+  } catch (error) {
+    term.writeln(`Error creating shell: ${error}`);
+  }
 }
 
 initShell();
